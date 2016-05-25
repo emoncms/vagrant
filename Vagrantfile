@@ -1,11 +1,22 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+require 'yaml'
+
 Vagrant.configure(2) do |config|
 
     config.vm.box = "bento/ubuntu-14.04"
     config.vm.network "forwarded_port", guest: 80, host: 8080
-    config.vm.synced_folder ".", "/var/www/html", :owner => "www-data", :group => "www-data"
+
+    settingsYml = File.expand_path("../settings.yml", __FILE__)
+
+    if File.exists? settingsYml then
+        settings = YAML::load(File.read(settingsYml))
+    else
+
+    end
+
+    config.vm.synced_folder settings["emoncms_source"], "/var/www/html", :owner => "www-data", :group => "www-data"
 
     config.vm.provider "virtualbox" do |vb|
         vb.name = "emoncms"
