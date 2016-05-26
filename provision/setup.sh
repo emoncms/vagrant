@@ -12,7 +12,7 @@ sudo apt-get install -y apache2
 
 sudo apt-get install -y mysql-server
 
-sudo printf "zend_extension=xdebug.so\ndebug.max_nesting_level = 400\nxdebug.remote_enable=on\nxdebug.remote_connect_back=on\nhtml_errors=1\nxdebug.extended_info=1" > /etc/php5/mods-available/xdebug.ini
+printf "zend_extension=xdebug.so\ndebug.max_nesting_level = 400\nxdebug.remote_enable=on\nxdebug.remote_connect_back=on\nhtml_errors=1\nxdebug.extended_info=1" | sudo tee /etc/php5/mods-available/xdebug.ini
 
 sudo a2enmod rewrite
 sudo a2enmod mime
