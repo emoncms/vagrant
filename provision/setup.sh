@@ -32,3 +32,6 @@ sed -i 's/_DB_USER_/root/g' settings.php
 sed -i 's/_DB_PASSWORD_/vagrant/g' settings.php
 
 mysql -uroot -pvagrant -e "CREATE DATABASE IF NOT EXISTS emoncms"
+
+sudo touch /var/log/emoncms.log
+sudo chmod 666 /var/log/emoncms.log
