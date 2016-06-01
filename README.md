@@ -4,6 +4,7 @@ Copy `settings.yml.sample` to `settings.yml` and modify the reference to where y
 
 Then run `vagrant up` and voila!
 
-* Accessible on localhost:8080 on the host machine
-* Included xdebug for debugging
-* Based on Ubuntu 14.04 with php 5.6
+* Based on Ubuntu 14.04 with PHP 5.6
+* Accessible on `localhost:8080` on the host machine
+* Including xDebug for debugging pre-configured
+* Bundled with [composer](https://getcomposer.org/)
