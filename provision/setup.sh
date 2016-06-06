@@ -12,7 +12,15 @@ sudo add-apt-repository -y ppa:ondrej/php5-5.6
 
 sudo apt-get update
 
-sudo apt-get install -y php5 php5-xdebug php5-mysql apache2 mysql-server curl
+sudo apt-get install -y php5 php5-xdebug php5-mysql apache2 mysql-server curl php-pear php5-dev redis-server
+
+sudo pear channel-discover pear.swiftmailer.org
+sudo pecl install channel://pecl.php.net/dio-0.0.6 redis swift/swift
+
+sudo sh -c 'echo "extension=dio.so" > /etc/php5/apache2/conf.d/20-dio.ini'
+sudo sh -c 'echo "extension=dio.so" > /etc/php5/cli/conf.d/20-dio.ini'
+sudo sh -c 'echo "extension=redis.so" > /etc/php5/apache2/conf.d/20-redis.ini'
+sudo sh -c 'echo "extension=redis.so" > /etc/php5/cli/conf.d/20-redis.ini'
 
 sudo cp /vagrant/provision/config/xdebug.ini /etc/php5/mods-available/xdebug.ini
 

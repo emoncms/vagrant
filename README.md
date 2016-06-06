@@ -8,3 +8,4 @@ Then run `vagrant up` and voila!
 * Accessible on `localhost:8080` on the host machine
 * Including xDebug for debugging pre-configured
 * Bundled with [composer](https://getcomposer.org/)
+* Redis enabled
