@@ -46,7 +46,9 @@ if [ ! -f settings.php ]; then
 	sed -i 's/_DB_PASSWORD_/vagrant/g' settings.php
 fi
 
-composer install
+if [ ! -f composer.json ]; then
+	composer install
+fi
 
 mysql -uroot -pvagrant -e "CREATE DATABASE IF NOT EXISTS emoncms"
 
