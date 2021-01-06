@@ -1,4 +1,8 @@
-## Emoncms Vagrant development box config 
+
+
+# Archive repository - NO LONGER FUNCTIONAL WITH CURRENT EMONCMS VERSION 
+
+**Emoncms Vagrant development box config**
 
 Copy `settings.yml.sample` to `settings.yml` and modify the reference to where you have emoncms checked out.
 
